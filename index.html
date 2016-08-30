@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Programming Sesh</title>
+<meta name="author" content="(Lincoln <lincoln@clarete.li>)"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/reveal.css"/>
+
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/reveal.js/3.0.0/css/theme/moon.css" id="theme"/>
+
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'http://cdn.jsdelivr.net/reveal.js/3.0.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Programming Sesh</h1><h2 class="author">Lincoln &lt;lincoln@clarete.li&gt;</h2><p class="date">Created: 2016-08-30 Tue 17:43</p>
+</section>
+<section id="table-of-contents">
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#/slide-orgheadline2">1. Abstraction</a>
+<ul>
+<li><a href="#/slide-orgheadline1">1.1. Abstraction (Software Engineering)</a></li>
+</ul>
+</li>
+<li><a href="#/slide-orgheadline8">2. Some abstractions</a>
+<ul>
+<li><a href="#/slide-orgheadline6">2.1. Terminal</a>
+<ul>
+<li><a href="#/slide-orgheadline3">2.1.1. Terminals are also an abstraction</a></li>
+<li><a href="#/slide-orgheadline4">2.1.2. Terminal Emulators</a></li>
+<li><a href="#/slide-orgheadline5">2.1.3. Shell</a></li>
+</ul>
+</li>
+<li><a href="#/slide-orgheadline7">2.2. Some shell commands</a></li>
+</ul>
+</li>
+<li><a href="#/slide-orgheadline18">3. More abstractions</a>
+<ul>
+<li><a href="#/slide-orgheadline17">3.1. File System</a>
+<ul>
+<li><a href="#/slide-orgheadline9">3.1.1. Directory</a></li>
+<li><a href="#/slide-orgheadline10">3.1.2. Root Directory</a></li>
+<li><a href="#/slide-orgheadline11">3.1.3. User Directory</a></li>
+<li><a href="#/slide-orgheadline12">3.1.4. File</a></li>
+<li><a href="#/slide-orgheadline13">3.1.5. Write Text to Files</a></li>
+<li><a href="#/slide-orgheadline14">3.1.6. File Attributes</a></li>
+<li><a href="#/slide-orgheadline15">3.1.7. Configure Permissions</a></li>
+<li><a href="#/slide-orgheadline16">3.1.8. Content Types</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#/slide-orgheadline22">4. OMG wait!</a>
+<ul>
+<li><a href="#/slide-orgheadline19">4.1. <b>#!</b></a></li>
+<li><a href="#/slide-orgheadline20">4.2. <b>chmod</b></a></li>
+<li><a href="#/slide-orgheadline21">4.3. </a></li>
+</ul>
+</li>
+<li><a href="#/slide-orgheadline26">5. Coding time!</a>
+<ul>
+<li>
+<ul>
+<li><a href="#/slide-orgheadline23">5.0.1. Variables</a></li>
+<li><a href="#/slide-orgheadline24">5.0.2. Environment Variables</a></li>
+<li><a href="#/slide-orgheadline25">5.0.3. Introduce Logic</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#/slide-orgheadline27">6. </a></li>
+</ul>
+</div>
+</div>
+</section>
+
+<section>
+<section id="slide-orgheadline2">
+<h2 id="orgheadline2"><span class="section-number-2">1</span> Abstraction</h2>
+<p>
+noun
+</p>
+<ol>
+<li><b>the quality of dealing with ideas rather than events.</b></li>
+<li><b>freedom from representational qualities in art.</b></li>
+
+</ol>
+
+<p>
+(Google)
+</p>
+
+</section>
+<section id="slide-orgheadline1">
+<h3 id="orgheadline1"><span class="section-number-3">1.1</span> Abstraction (Software Engineering)</h3>
+<p>
+In software engineering and computer science, abstraction is a
+technique for arranging complexity of computer systems. It works by
+establishing a level of complexity on which a person interacts with
+the system, suppressing the more complex details below the current
+level.
+</p>
+
+<p>
+(Wikipedia)
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline8">
+<h2 id="orgheadline8"><span class="section-number-2">2</span> Some abstractions</h2>
+<div class="outline-text-2" id="text-2">
+</div></section>
+<section id="slide-orgheadline6">
+<h3 id="orgheadline6"><span class="section-number-3">2.1</span> Terminal</h3>
+<p>
+Cool interfaces took a while to come up because cool monitors took
+a while to come up. Terminals were the main output of computers for
+a while.
+</p>
+
+
+<div id="orgparagraph1" class="figure">
+<p><img src="./Altair8080.jpg" alt="Altair8080.jpg" width="60%" />
+</p>
+<p><span class="figure-number">Figure 1:</span> Altair8080 &#x2013; Awesomest computer around 1974</p>
+</div>
+
+
+</section>
+<section id="slide-orgheadline3">
+<h4 id="orgheadline3"><span class="section-number-4">2.1.1</span> Terminals are also an abstraction</h4>
+<p>
+It used to be slightly less practical to interact with computers.
+</p>
+
+
+<div id="orgparagraph2" class="figure">
+<p><img src="./Eniac.jpg" alt="Eniac.jpg" width="55%" />
+</p>
+<p><span class="figure-number">Figure 2:</span> Eniac &#x2013; First general purpose computer</p>
+</div>
+
+</section>
+<section id="slide-orgheadline4">
+<h4 id="orgheadline4"><span class="section-number-4">2.1.2</span> Terminal Emulators</h4>
+<p>
+Nowadays
+</p>
+
+
+<div id="orgparagraph3" class="figure">
+<p><img src="./Terminal.png" alt="Terminal.png" width="55%" />
+</p>
+<p><span class="figure-number">Figure 3:</span> Terminal Emulators Nowadays</p>
+</div>
+
+</section>
+<section id="slide-orgheadline5">
+<h4 id="orgheadline5"><span class="section-number-4">2.1.3</span> Shell</h4>
+<p>
+Software that receives commands typed on a keyboard, executes them
+and then prints out the results on a terminal device.
+</p>
+
+</section>
+<section id="slide-orgheadline7">
+<h3 id="orgheadline7"><span class="section-number-3">2.2</span> Some shell commands</h3>
+<ul>
+<li><b>ls</b>: List files in current directory</li>
+<li><b>pwd</b>: Print out current directory</li>
+<li><b>cd</b>: Change Directory</li>
+<li><b>cat</b>: Print out contents of a giv</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline18">
+<h2 id="orgheadline18"><span class="section-number-2">3</span> More abstractions</h2>
+<div class="outline-text-2" id="text-3">
+</div></section>
+<section id="slide-orgheadline17">
+<h3 id="orgheadline17"><span class="section-number-3">3.1</span> File System</h3>
+<div class="outline-text-3" id="text-3-1">
+</div></section>
+<section id="slide-orgheadline9">
+<h4 id="orgheadline9"><span class="section-number-4">3.1.1</span> Directory</h4>
+<ul>
+<li>Path</li>
+<li>Files</li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline10">
+<h4 id="orgheadline10"><span class="section-number-4">3.1.2</span> Root Directory</h4>
+<p>
+<b>/</b>
+</p>
+
+</section>
+<section id="slide-orgheadline11">
+<h4 id="orgheadline11"><span class="section-number-4">3.1.3</span> User Directory</h4>
+<p>
+<b>~</b>
+</p>
+
+</section>
+<section id="slide-orgheadline12">
+<h4 id="orgheadline12"><span class="section-number-4">3.1.4</span> File</h4>
+<ul>
+<li>Path</li>
+<li>Contents</li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline13">
+<h4 id="orgheadline13"><span class="section-number-4">3.1.5</span> Write Text to Files</h4>
+<ul>
+<li><b>touch</b></li>
+<li><b>echo</b></li>
+<li><b>&gt;</b></li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline14">
+<h4 id="orgheadline14"><span class="section-number-4">3.1.6</span> File Attributes</h4>
+<ul>
+<li>Size</li>
+<li>Creation Date</li>
+<li>Owner</li>
+<li>Group</li>
+<li>Permissions
+<ul>
+<li>read</li>
+<li>write</li>
+<li>execute</li>
+
+</ul></li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline15">
+<h4 id="orgheadline15"><span class="section-number-4">3.1.7</span> Configure Permissions</h4>
+<p>
+<b>chmod</b>
+</p>
+
+</section>
+<section id="slide-orgheadline16">
+<h4 id="orgheadline16"><span class="section-number-4">3.1.8</span> Content Types</h4>
+<ul>
+<li>Extensions</li>
+<li>Magic Number</li>
+<li>#!</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline22">
+<h2 id="orgheadline22"><span class="section-number-2">4</span> OMG wait!</h2>
+<div class="outline-text-2" id="text-4">
+</div></section>
+<section id="slide-orgheadline19">
+<h3 id="orgheadline19"><span class="section-number-3">4.1</span> <b>#!</b></h3>
+<p>
+#!/bin/sh<br  />
+echo "hi"
+</p>
+</section>
+<section id="slide-orgheadline20">
+<h3 id="orgheadline20"><span class="section-number-3">4.2</span> <b>chmod</b></h3>
+<p>
+<b>chmod +x prog</b><br  />
+<b>ls -l program</b><br  />
+./prog
+</p>
+</section>
+<section id="slide-orgheadline21">
+<h3 id="orgheadline21"><span class="section-number-3">4.3</span> </h3>
+
+<div class="figure">
+<p><img src="./suprise-cat-omg-caturday-cats-lol.jpg" alt="suprise-cat-omg-caturday-cats-lol.jpg" width="55%" />
+</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline26">
+<h2 id="orgheadline26"><span class="section-number-2">5</span> Coding time!</h2>
+<div class="outline-text-2" id="text-5">
+</div></section>
+<section id="slide-orgheadline23">
+<h4 id="orgheadline23"><span class="section-number-4">5.0.1</span> Variables</h4>
+<ul>
+<li><b>=</b></li>
+<li><b>echo</b></li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline24">
+<h4 id="orgheadline24"><span class="section-number-4">5.0.2</span> Environment Variables</h4>
+<ul>
+<li><b>export</b></li>
+
+</ul>
+
+</section>
+<section id="slide-orgheadline25">
+<h4 id="orgheadline25"><span class="section-number-4">5.0.3</span> Introduce Logic</h4>
+<ul>
+<li><b>[</b></li>
+<li><b>if</b></li>
+<li><b>while</b></li>
+<li><b>for</b></li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgheadline27">
+<h2 id="orgheadline27"><span class="section-number-2">6</span> </h2>
+
+<div class="figure">
+<p><img src="./anotherworld.png" alt="anotherworld.png" width="80%" />
+</p>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/head.min.js"></script>
+<script src="http://cdn.jsdelivr.net/reveal.js/3.0.0/js/reveal.js"></script>
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+overview: true,
+
+theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/fade/none
+transitionSpeed: 'default',
+multiplex: {
+    secret: '', // null if client
+    id: '', // id, obtained from socket.io server
+    url: '' // Location of socket.io server
+},
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'http://cdn.jsdelivr.net/reveal.js/3.0.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+});
+</script>
+</body>
+</html>
