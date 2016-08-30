@@ -1,0 +1,165 @@
+#+TITLE: Programming Sesh
+#+AUTHOR: Lincoln <lincoln@clarete.li>
+#+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
+#+REVEAL_THEME: moon
+#+REVEAL_TRANS: linear
+
+# Execute 'C-c C-e R R' to export the presentation
+# M-x<ret>load-library<ret>ox-reveal
+
+* Abstraction
+   noun
+   1. *the quality of dealing with ideas rather than events.*
+   2. *freedom from representational qualities in art.*
+
+   (Google)
+
+** Abstraction (Software Engineering)
+
+   In software engineering and computer science, abstraction is a
+   technique for arranging complexity of computer systems. It works by
+   establishing a level of complexity on which a person interacts with
+   the system, suppressing the more complex details below the current
+   level.
+
+   (Wikipedia)
+
+* Some abstractions
+** Terminal
+
+   Cool interfaces took a while to come up because cool monitors took
+   a while to come up. Terminals were the main output of computers for
+   a while.
+
+   #+CAPTION: Altair8080 -- Awesomest computer around 1974
+   #+NAME:    fig:Altair8080.jpg
+   #+attr_html: :width 60%
+   [[./Altair8080.jpg]]
+   
+
+*** Terminals are also an abstraction
+
+    It used to be slightly less practical to interact with computers.
+
+    #+CAPTION: Eniac -- First general purpose computer
+    #+NAME:    fig:Eniac.jpg
+    #+attr_html: :width 55%
+    [[./Eniac.jpg]]
+
+*** Terminal Emulators
+
+    Nowadays
+
+    #+CAPTION: Terminal Emulators Nowadays
+    #+NAME:    fig:Terminal.png
+    #+attr_html: :width 55%
+    [[./Terminal.png]]
+
+*** Shell
+
+    Software that receives commands typed on a keyboard, executes them
+    and then prints out the results on a terminal device.
+
+** Some shell commands
+
+   * *ls*: List files in current directory
+   * *pwd*: Print out current directory
+   * *cd*: Change Directory
+   * *cat*: Print out contents of a giv     
+    
+* More abstractions
+
+** File System
+*** Directory
+    * Path
+    * Files
+
+*** Root Directory
+     */*
+
+*** User Directory
+     *~*
+
+*** File
+    * Path
+    * Contents
+
+*** Write Text to Files
+
+    * *touch*
+    * *echo*
+    * *>*
+
+*** File Attributes
+    * Size
+    * Creation Date
+    * Owner
+    * Group
+    * Permissions
+      - read
+      - write
+      - execute
+
+*** Configure Permissions
+
+    *chmod*
+    
+*** Content Types
+    * Extensions
+    * Magic Number
+    * #!
+
+* OMG wait!
+
+** *#!*
+   #!/bin/sh\\
+   echo "hi"
+** *chmod*
+   *chmod +x prog*\\
+   *ls -l program*\\
+   ./prog
+** 
+   #+CAPTION: 
+   #+attr_html: :width 55%
+   [[./suprise-cat-omg-caturday-cats-lol.jpg]]
+
+* Coding time!
+
+*** Variables
+    * *=*
+    * *echo*
+
+*** Environment Variables
+    * *export*
+
+*** Introduce Logic
+    * *[*
+    * *if*
+    * *while*
+    * *for*
+
+* 
+   #+attr_html: :width 80%
+   [[./anotherworld.png]]
+
+ 
+# ** History
+
+#   * Turin
+
+# ** Motivation
+
+#    2 + 3
+
+#    * Turin Machine
+#    * Memory and Processor
+#    * Eniac
+#    * Boolean
+
+#    * Operating system abstraction around CPU 
+
+
+# ** Links
+
+#    http://www.sciencedirect.com/science/article/pii/S0019995859903626
+
