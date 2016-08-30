@@ -1,5 +1,6 @@
 #+TITLE: Programming Sesh
 #+AUTHOR: Lincoln <lincoln@clarete.li>
+#+OPTIONS: toc:1
 #+REVEAL_ROOT: http://cdn.jsdelivr.net/reveal.js/3.0.0/
 #+REVEAL_THEME: moon
 #+REVEAL_TRANS: linear
@@ -138,7 +139,7 @@
     * *while*
     * *for*
 
-* 
+* Next steps
    #+attr_html: :width 80%
    [[./anotherworld.png]]
 
